@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <title>Cocktail Maker</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <form class="flex" id="submit">
+            <input type="text" id="search-term" placeholder="Search for a cocktail or an ingredient" />
+            <button id="search" class="search" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="random" class="random">
+                <i class="fas fa-random"></i>
+            </button>
+        </form>
+    </header>
+    <main class="main" id="main">
+        <h1 class="cocktails-heading" id="cocktails"></h1>
+        <div class="drinks" id="drinks">
+
+            <div class="main__container" id="main-container"></div>
+            <div class="result-heading" id="result-heading">
+            </div>
+            <p class="description">
+            </p>
+            <!-- <div class="fav__items">
+                <div class="fav__container">
+                    <h3>Fav Meals</h3>
+                    <ul class="fav__drinks" id="fav-drinks">
+
+                    </ul>
+                </div> -->
+            <div class="cocktail__ingredients" id="cocktail-ingredients"></div>
+        </div>
+        </div>
+        <!-- <button class="btn">View Recipe</button> -->
+
+        </div>
+
+        <div class="recipe__container" id="recipe-container"></div>
+
+        </div>
+    </main>
+</body>
+
+</html>
