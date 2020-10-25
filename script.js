@@ -57,32 +57,47 @@ function showSearchResults(searchItem, data) {
         drinkEl.innerHTML= data.drinks
             .map(
                 (drink) =>
-                `<div class="main__container" >
-                    <div class="left img">
-                        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
-                    </div>
+                {
+                    const ingredients = [];
+                    for (let i = 1; i <= 15; i++) {
+                        if (drink[`strIngredient${i}`]) {
+                            ingredients.push(
+                                `${drink[`strIngredient${i}`]} - ${drink[`strMeasure${i}`]}`,
+                            );           
+                        } else {
+                            break;
+                        }
+                    }
 
-                    <div class="right information">
-                    <div class ="result__container">
-                        <h2 class="cocktail-title">${drink.strDrink}</h2>
-                        <button class="fav__btn">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                        <p class="description">
-                        ${drink.strInstructions}
-                        </p>
-                        <div class="prep__container">
-                            <div class="prep">Glass<span>${drink.strGlass}</span></div>
-                            <div class="prep">Style<span>${drink.strCategory}</span></div>
-                            <div class="prep">Alcoholic<span>${drink.strAlcoholic}</span></div>
+                    return `<div class="main__container" >
+                        <div class="left img">
+                            <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
                         </div>
 
-                            <div class="cocktail__ingredients" id="cocktail-ingredients"></div>
-                        </div>          
-                </div>
-               
-                `  
+                        <div class="right information">
+                        <div class ="result__container">
+                            <h2 class="cocktail-title">${drink.strDrink}</h2>
+                            <button class="fav__btn">
+                            <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                            <p class="description">
+                            ${drink.strInstructions}
+                            </p>
+                            <div class="prep__container">
+                                <div class="prep">Glass<span>${drink.strGlass}</span></div>
+                                <div class="prep">Style<span>${drink.strCategory}</span></div>
+                                <div class="prep">Alcoholic<span>${drink.strAlcoholic}</span></div>
+                            </div>
+
+                                <div class="cocktail__ingredients" id="cocktail-ingredients">
+                                <ul>${ingredients.map((ing) => `<li>${ing}</li>`).join("")}</ul>
+                                </div>
+                            </div>          
+                    </div>
+                
+                    `
+                }  
             )
             .join("");
 drinkEl.append(drinkData)
