@@ -77,9 +77,6 @@ function showSearchResults(searchItem, data) {
                         <div class="right information">
                         <div class ="result__container">
                             <h2 class="cocktail-title">${drink.strDrink}</h2>
-                            <button class="fav__btn">
-                            <i class="fas fa-heart"></i>
-                            </button>
                         </div>
                             <p class="description">
                             ${drink.strInstructions}
